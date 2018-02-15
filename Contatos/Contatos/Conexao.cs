@@ -8,6 +8,6 @@ namespace Contatos
 {
     class Conexao
     {
-        public static string Cn = "Data Source = SANTTY\\SANTTYSQL; Initial Catalog = contatos; Integrated Security=true";
+        public static string Cn = "Data Source = SANTTY\\SANTTYSQL; Initial Catalog = contato; Integrated Security=true";
     }
 }
