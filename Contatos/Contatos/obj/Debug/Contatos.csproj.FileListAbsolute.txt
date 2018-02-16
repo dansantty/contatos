@@ -7,3 +7,4 @@ c:\users\danilo.santty\documents\visual studio 2015\Projects\Contatos\Contatos\o
 c:\users\danilo.santty\documents\visual studio 2015\Projects\Contatos\Contatos\obj\Debug\Contatos.exe
 c:\users\danilo.santty\documents\visual studio 2015\Projects\Contatos\Contatos\obj\Debug\Contatos.pdb
 C:\Users\Danilo.Santty\documents\visual studio 2015\Projects\Contatos\Contatos\obj\Debug\Contatos.Contatos.resources
+C:\Users\Danilo.Santty\documents\visual studio 2015\Projects\Contatos\Contatos\obj\Debug\Contatos.Telefone.resources

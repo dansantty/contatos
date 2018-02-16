@@ -58,6 +58,43 @@ namespace Contatos
             return Obj.ExcluirContato(Obj);
         }
 
+        public static string IncluirTel(int idPessoa, string cel, string come, string resid, string fax)
+        {
+            DADOS Obj = new DADOS();
+            Obj.IdPessoa = idPessoa;
+            Obj.Celular = cel;
+            Obj.Comercial = come;
+            Obj.Residencia = resid;
+            Obj.Fax = fax;
+
+            return Obj.InserirTel(Obj);
+
+        }
+
+        public static string AlterarTel(int idPessoa, string cel, string come, string resid, string fax)
+        {
+            DADOS Obj = new DADOS();
+            Obj.IdPessoa = idPessoa;
+            Obj.Celular = cel;
+            Obj.Comercial = come;
+            Obj.Residencia = resid;
+            Obj.Fax = fax;
+
+            return Obj.AlterarTel(Obj);
+        }
+
+
+        public static string ExcluirTel(int idPessoa, string cel, string come, string resid, string fax)
+        {
+            DADOS Obj = new DADOS();
+            Obj.IdPessoa = idPessoa;
+            Obj.Celular = cel;
+            Obj.Comercial = come;
+            Obj.Residencia = resid;
+            Obj.Fax = fax;
+
+            return Obj.ExcluirTel(Obj);
+        }
 
     }
 }

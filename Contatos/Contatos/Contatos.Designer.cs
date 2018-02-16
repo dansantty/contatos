@@ -85,6 +85,7 @@ namespace Contatos
             this.txtID = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnBusca = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -611,11 +612,22 @@ namespace Contatos
             this.btnBusca.UseVisualStyleBackColor = true;
             this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(8, 420);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(168, 23);
+            this.button1.TabIndex = 54;
+            this.button1.Text = "Configurações de Telefone";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Contatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 491);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label11);
@@ -742,6 +754,7 @@ namespace Contatos
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnBusca;
+        private Button button1;
     }
 }
 

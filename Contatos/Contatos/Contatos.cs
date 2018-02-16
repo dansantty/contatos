@@ -200,5 +200,11 @@ namespace Contatos
             resp = NEGOCIO.ExcluirContato(Convert.ToInt32(txtID.Text));
             MessageBox.Show("Morador Excluido");
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Telefone frm = new Telefone();
+            frm.Show();
+        }
     }
 }

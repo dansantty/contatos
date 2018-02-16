@@ -408,5 +408,222 @@ namespace Contatos
             }
             return resp;
         }
+
+        //Inserindo novo Telefone
+
+        //Metodo de Inserção
+        public string InserirTel(DADOS Contato)
+        {
+            string resp = "";
+            SqlConnection sqlCon = new SqlConnection();
+
+            try
+            {
+                //codigo
+                sqlCon.ConnectionString = Conexao.Cn;
+                sqlCon.Open();
+
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = sqlCon;
+                sqlCmd.CommandText = "adicionarTel";
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter parIdPessoa = new SqlParameter();
+                parIdPessoa.ParameterName = "@idPessoa";
+                parIdPessoa.SqlDbType = SqlDbType.Int;
+                parIdPessoa.Value = Contato.IdPessoa;
+                sqlCmd.Parameters.Add(parIdPessoa);
+
+                SqlParameter parCelular = new SqlParameter();
+                parCelular.ParameterName = "@celular";
+                parCelular.SqlDbType = SqlDbType.VarChar;
+                parCelular.Size = 15;
+                parCelular.Value = Contato.Celular;
+                sqlCmd.Parameters.Add(parCelular);
+
+                SqlParameter parResidencia = new SqlParameter();
+                parResidencia.ParameterName = "@residencial";
+                parResidencia.SqlDbType = SqlDbType.VarChar;
+                parResidencia.Size = 15;
+                parResidencia.Value = Contato.Residencia;
+                sqlCmd.Parameters.Add(parResidencia);
+
+                SqlParameter parComercial = new SqlParameter();
+                parComercial.ParameterName = "@comercial";
+                parComercial.SqlDbType = SqlDbType.VarChar;
+                parComercial.Size = 15;
+                parComercial.Value = Contato.Comercial;
+                sqlCmd.Parameters.Add(parComercial);
+
+                SqlParameter parFax = new SqlParameter();
+                parFax.ParameterName = "@fax";
+                parFax.SqlDbType = SqlDbType.VarChar;
+                parFax.Size = 15;
+                parFax.Value = Contato.Fax;
+                sqlCmd.Parameters.Add(parFax);
+
+                
+
+
+
+                //executar comando
+
+                resp = sqlCmd.ExecuteNonQuery() == 1 ? "Contato Inserido" : "Contato não inserido";
+
+
+
+            }
+            catch (Exception ex)
+            {
+                resp = ex.Message;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open)
+                    sqlCon.Close();
+            }
+            return resp;
+        }
+
+        //Excluir Contato
+        public string ExcluirTel(DADOS Contato)
+        {
+            string resp = "";
+            SqlConnection sqlCon = new SqlConnection();
+
+            try
+            {
+                //codigo
+                sqlCon.ConnectionString = Conexao.Cn;
+                sqlCon.Open();
+
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = sqlCon;
+                sqlCmd.CommandText = "excluirTel";
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter parIdPessoa = new SqlParameter();
+                parIdPessoa.ParameterName = "@idPessoa";
+                parIdPessoa.SqlDbType = SqlDbType.Int;
+                parIdPessoa.Value = Contato.IdPessoa;
+                sqlCmd.Parameters.Add(parIdPessoa);
+
+                SqlParameter parCelular = new SqlParameter();
+                parCelular.ParameterName = "@celular";
+                parCelular.SqlDbType = SqlDbType.VarChar;
+                parCelular.Size = 15;
+                parCelular.Value = Contato.Celular;
+                sqlCmd.Parameters.Add(parCelular);
+
+                SqlParameter parResidencia = new SqlParameter();
+                parResidencia.ParameterName = "@residencial";
+                parResidencia.SqlDbType = SqlDbType.VarChar;
+                parResidencia.Size = 15;
+                parResidencia.Value = Contato.Residencia;
+                sqlCmd.Parameters.Add(parResidencia);
+
+                SqlParameter parComercial = new SqlParameter();
+                parComercial.ParameterName = "@comercial";
+                parComercial.SqlDbType = SqlDbType.VarChar;
+                parComercial.Size = 15;
+                parComercial.Value = Contato.Comercial;
+                sqlCmd.Parameters.Add(parComercial);
+
+                SqlParameter parFax = new SqlParameter();
+                parFax.ParameterName = "@fax";
+                parFax.SqlDbType = SqlDbType.VarChar;
+                parFax.Size = 15;
+                parFax.Value = Contato.Fax;
+                sqlCmd.Parameters.Add(parFax);
+
+
+
+                //executar comando
+
+                resp = sqlCmd.ExecuteNonQuery() == 1 ? "Telefone excluido" : "Telefone não excluido";
+
+            }
+            catch (Exception ex)
+            {
+                resp = ex.Message;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open)
+                    sqlCon.Close();
+            }
+            return resp;
+        }
+
+        //alterar TEL
+
+        public string AlterarTel(DADOS Contato)
+        {
+            string resp = "";
+            SqlConnection sqlCon = new SqlConnection();
+
+            try
+            {
+                //codigo
+                sqlCon.ConnectionString = Conexao.Cn;
+                sqlCon.Open();
+
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = sqlCon;
+                sqlCmd.CommandText = "alterarTel";
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter parPessoa = new SqlParameter();
+                parPessoa.ParameterName = "@idPessoa";
+                parPessoa.SqlDbType = SqlDbType.Int;
+                parPessoa.Value = Contato.IdPessoa;
+                sqlCmd.Parameters.Add(parPessoa);
+
+                SqlParameter parCelular = new SqlParameter();
+                parCelular.ParameterName = "@celular";
+                parCelular.SqlDbType = SqlDbType.VarChar;
+                parCelular.Size = 15;
+                parCelular.Value = Contato.Celular;
+                sqlCmd.Parameters.Add(parCelular);
+
+                SqlParameter parResidencia = new SqlParameter();
+                parResidencia.ParameterName = "@residencial";
+                parResidencia.SqlDbType = SqlDbType.VarChar;
+                parResidencia.Size = 15;
+                parResidencia.Value = Contato.Residencia;
+                sqlCmd.Parameters.Add(parResidencia);
+
+                SqlParameter parComercial = new SqlParameter();
+                parComercial.ParameterName = "@comercial";
+                parComercial.SqlDbType = SqlDbType.VarChar;
+                parComercial.Size = 15;
+                parComercial.Value = Contato.Comercial;
+                sqlCmd.Parameters.Add(parComercial);
+
+                SqlParameter parFax = new SqlParameter();
+                parFax.ParameterName = "@fax";
+                parFax.SqlDbType = SqlDbType.VarChar;
+                parFax.Size = 15;
+                parFax.Value = Contato.Fax;
+                sqlCmd.Parameters.Add(parFax);
+
+
+                resp = sqlCmd.ExecuteNonQuery() == 1 ? "Telefone Alterado" : "Telefone não alterado";
+
+
+
+            }
+            catch (Exception ex)
+            {
+                resp = ex.Message;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open)
+                    sqlCon.Close();
+            }
+            return resp;
+        }
+
     }
 }
