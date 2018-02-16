@@ -96,9 +96,9 @@ CREATE PROCEDURE alterarTel
 @fax varchar null(15)
 AS
 UpDate telefone set
-celular = @celular,
-comercial = @comercial,
-residencial = @residencial,
+celular = @celular;
+comercial = @comercial;
+residencial = @residencial;
 fax = @fax
 WHERE
 idPessoa = @idPessoa
@@ -113,23 +113,25 @@ CREATE PROCEDURE excluirTel
 @fax varchar(15)
 AS
 Delete celular from telefone
-where celular = @celular,
+where celular = @celular;
 Delete comercial from telefone
-where comercial = @comercial,
+where comercial = @comercial;
 Delete residencial from telefone
-where residencial = residencial,
+where residencial = residencial;
 Delete fax from telefone 
-where fax = @fax
+where fax = @fax;
+where idPessoa = @idPessoa
 Go;
 
 --Adicionar Telefone
 CREATE PROCEDURE adicionarTel
 @idPessoa int,
 @celular varchar(15) null,
-@residencial varchar(15) null,
+@residencial varchar(15) nul,
 @comercial varchar(15) null,
 @fax varchar(15) null
 AS
 INSERT INTO telefone(idPessoa, celular, residencial, comercial, fax)
 Values(@idPessoa, @celular, @residencial, @comerial, @fax)
 GO;
+
